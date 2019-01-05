@@ -1,0 +1,17 @@
+[package]
+name = "jwt"
+version = "0.1.0"
+authors = ["peternator7"]
+license = "MIT/Apache-2.0"
+repository = "https://github.com/peternator7/lockers"
+edition = "2018"
+
+[dependencies]
+ring = "*"
+chrono = "*"
+serde_json = "*"
+serde = "*"
+base64 = "*"
+untrusted = "*"
+strum = "*"
+strum_macros = "*"

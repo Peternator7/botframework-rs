@@ -1,0 +1,10 @@
+[package]
+name = "adaptive_cards"
+version = "0.1.0"
+authors = ["Peter Glotfelty 🚀 <peglotfe@microsoft.com>"]
+edition = "2018"
+
+[dependencies]
+serde = "*"
+serde_derive = "*"
+serde_json = "*"
