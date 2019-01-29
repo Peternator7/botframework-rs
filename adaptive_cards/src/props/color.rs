@@ -20,50 +20,50 @@ impl Default for Color {
 }
 
 impl Color {
-    pub fn is_default(color: &Color) -> bool {
-        match color {
+    pub fn is_default(&self) -> bool {
+        match self {
             Color::Default => true,
             _ => false,
         }
     }
 
-    pub fn is_dark(color: &Color) -> bool {
-        match color {
+    pub fn is_dark(&self) -> bool {
+        match self {
             Color::Dark => true,
             _ => false,
         }
     }
 
-    pub fn is_light(color: &Color) -> bool {
-        match color {
+    pub fn is_light(&self) -> bool {
+        match self {
             Color::Light => true,
             _ => false,
         }
     }
 
-    pub fn is_accent(color: &Color) -> bool {
-        match color {
+    pub fn is_accent(&self) -> bool {
+        match self {
             Color::Accent => true,
             _ => false,
         }
     }
 
-    pub fn is_warning(color: &Color) -> bool {
-        match color {
+    pub fn is_warning(&self) -> bool {
+        match self {
             Color::Warning => true,
             _ => false,
         }
     }
 
-    pub fn is_good(color: &Color) -> bool {
-        match color {
+    pub fn is_good(&self) -> bool {
+        match self {
             Color::Good => true,
             _ => false,
         }
     }
 
-    pub fn is_attention(color: &Color) -> bool {
-        match color {
+    pub fn is_attention(&self) -> bool {
+        match self {
             Color::Attention => true,
             _ => false,
         }

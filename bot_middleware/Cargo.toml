@@ -1,0 +1,12 @@
+[package]
+name = "bot_middleware"
+version = "0.1.0"
+authors = ["Peter Glotfelty 🚀"]
+edition = "2018"
+
+[dependencies]
+futures = "*"
+bot_schema = { path="../bot_schema" }
+reqwest = "*"
+percent-encoding = "*"
+actix-web = "*"

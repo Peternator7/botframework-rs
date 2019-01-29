@@ -18,36 +18,36 @@ impl Default for TextSize {
 }
 
 impl TextSize {
-    pub fn is_small(size: &TextSize) -> bool {
-        match size {
+    pub fn is_small(&self) -> bool {
+        match self {
             TextSize::Small => true,
             _ => false
         }
     }
 
-    pub fn is_default(size: &TextSize) -> bool {
-        match size {
+    pub fn is_default(&self) -> bool {
+        match self {
             TextSize::Default => true,
             _ => false
         }
     }
 
-    pub fn is_medium(size: &TextSize) -> bool {
-        match size {
+    pub fn is_medium(&self) -> bool {
+        match self {
             TextSize::Medium => true,
             _ => false
         }
     }
 
-    pub fn is_large(size: &TextSize) -> bool {
-        match size {
+    pub fn is_large(&self) -> bool {
+        match self {
             TextSize::Large => true,
             _ => false
         }
     }
 
-    pub fn is_extra_large(size: &TextSize) -> bool {
-        match size {
+    pub fn is_extra_large(&self) -> bool {
+        match self {
             TextSize::ExtraLarge => true,
             _ => false
         }

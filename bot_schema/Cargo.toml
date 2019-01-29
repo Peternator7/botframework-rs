@@ -1,0 +1,12 @@
+[package]
+name = "bot_schema"
+version = "0.1.0"
+authors = ["Peter Glotfelty 🚀"]
+edition = "2018"
+
+[dependencies]
+serde = "*"
+serde_derive = "*"
+serde_json = "*"
+chrono = { version="*", features = ["serde"] }
+adaptive_cards = { path = "../adaptive_cards" }

@@ -18,36 +18,36 @@ impl Default for ImageSize {
 }
 
 impl ImageSize {
-    pub fn is_small(size: &ImageSize) -> bool {
-        match size {
+    pub fn is_small(&self) -> bool {
+        match self {
             ImageSize::Small => true,
             _ => false
         }
     }
 
-    pub fn is_medium(size: &ImageSize) -> bool {
-        match size {
+    pub fn is_medium(&self) -> bool {
+        match self {
             ImageSize::Medium => true,
             _ => false
         }
     }
 
-    pub fn is_large(size: &ImageSize) -> bool {
-        match size {
+    pub fn is_large(&self) -> bool {
+        match self {
             ImageSize::Large => true,
             _ => false
         }
     }
 
-    pub fn is_auto(size: &ImageSize) -> bool {
-        match size {
+    pub fn is_auto(&self) -> bool {
+        match self {
             ImageSize::Auto => true,
             _ => false
         }
     }
 
-    pub fn is_stretch(size: &ImageSize) -> bool {
-        match size {
+    pub fn is_stretch(&self) -> bool {
+        match self {
             ImageSize::Stretch => true,
             _ => false
         }

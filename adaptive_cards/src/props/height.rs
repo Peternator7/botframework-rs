@@ -15,16 +15,16 @@ impl Default for Height {
 }
 
 impl Height {
-    pub fn is_automatic(height: &Height) -> bool {
-        if let Height::Automatic = height {
+    pub fn is_automatic(&self) -> bool {
+        if let Height::Automatic = self {
             true
         } else {
             false
         }
     }
 
-    pub fn is_stretch(height: &Height) -> bool {
-        if let Height::Stretch = height {
+    pub fn is_stretch(&self) -> bool {
+        if let Height::Stretch = self {
             true
         } else {
             false

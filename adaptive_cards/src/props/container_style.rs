@@ -15,15 +15,15 @@ impl Default for ContainerStyle {
 }
 
 impl ContainerStyle {
-    pub fn is_default(style: &ContainerStyle) -> bool {
-        match style {
+    pub fn is_default(&self) -> bool {
+        match self {
             ContainerStyle::Default =>  true,
             _ => false,
         }
     }
 
-    pub fn is_emphasis(style: &ContainerStyle) -> bool {
-        match style {
+    pub fn is_emphasis(&self) -> bool {
+        match self {
             ContainerStyle::Emphasis =>  true,
             _ => false,
         }

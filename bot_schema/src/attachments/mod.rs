@@ -1,12 +1,9 @@
 use self::hero_card::HeroCard;
-use self::adaptive_card::AdaptiveCard;
-
-use std::convert::From;
+use adaptive_cards::AdaptiveCard;
 
 use serde_derive::{Serialize, Deserialize};
 
 pub mod actions;
-pub mod adaptive_card;
 pub mod hero_card;
 
 // #[derive(Serialize, Deserialize, Clone, PartialEq, Debug)]
@@ -27,7 +24,7 @@ pub enum Attachment {
     HeroCard { content: self::hero_card::HeroCard },
     /// Adaptive Cards.
     #[serde(rename = "application/vnd.microsoft.card.adaptive")]
-    AdaptiveCard { content: self::adaptive_card::AdaptiveCard },
+    AdaptiveCard { content: AdaptiveCard },
     Other(serde_json::Value),
 }
 

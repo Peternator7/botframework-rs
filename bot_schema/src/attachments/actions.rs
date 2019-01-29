@@ -18,16 +18,12 @@ pub enum CardAction {
     ImBack {
         #[serde(skip_serializing_if = "Option::is_none", default)]
         title: Option<String>,
-        // #[serde(skip_serializing_if = "Option::is_none", default)]
-        // image: Option<String>,
         #[serde(skip_serializing_if = "Option::is_none", default)]
         value: Option<String>,
     },
     PostBack {
         #[serde(skip_serializing_if = "Option::is_none", default)]
         title: Option<String>,
-        // #[serde(skip_serializing_if = "Option::is_none", default)]
-        // image: Option<String>,
         #[serde(skip_serializing_if = "Option::is_none", default)]
         value: Option<String>,
     },

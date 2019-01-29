@@ -15,15 +15,15 @@ impl Default for ImageStyle {
 }
 
 impl ImageStyle {
-    pub fn is_default(style: &ImageStyle) -> bool {
-        match style {
+    pub fn is_default(&self) -> bool {
+        match self {
             ImageStyle::Default => true,
             _ => false,
         }
     }
 
-    pub fn is_person(style: &ImageStyle) -> bool {
-        match style {
+    pub fn is_person(&self) -> bool {
+        match self {
             ImageStyle::Person => true,
             _ => false,
         }

@@ -1,0 +1,16 @@
+[package]
+name = "rust-bot"
+version = "0.1.0"
+authors = ["Peter Glotfelty 🚀 <peglotfe@microsoft.com>"]
+edition = "2018"
+
+[dependencies]
+chrono = { version="*", features=["serde"] }
+serde = "*"
+serde_json = "*"
+actix-web = "*"
+adaptive_cards = { path="../adaptive_cards" }
+bot_schema = { path="../bot_schema" }
+futures = "*"
+reqwest = "*"
+percent-encoding = "*"

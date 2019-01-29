@@ -18,20 +18,25 @@ impl JwtBuilder {
         self
     }
 
-    pub fn issuer(mut self, issuer: &str) -> JwtBuilder {
-        self.jwt.issuer = Some(issuer.to_string());
-        self
-    }
-
-    pub fn subject(mut self, subject: &str) -> JwtBuilder {
-        self.jwt.subject = Some(subject.to_string());
-        self
-    }
-
-    pub fn claim<V>(mut self, key: &str, value: V) -> JwtBuilder 
-        where V: std::convert::Into<Value>
+    pub fn issuer<Str>(mut self, issuer: Str) -> JwtBuilder
+        where Str: Into<String>
     {
-        self.jwt.claims.insert(key.to_string(), value.into());
+        self.jwt.issuer = Some(issuer.into());
+        self
+    }
+
+    pub fn subject<Str>(mut self, subject: Str) -> JwtBuilder
+        where Str: Into<String>
+    {
+        self.jwt.subject = Some(subject.into());
+        self
+    }
+
+    pub fn claim<Str, V>(mut self, key: Str, value: V) -> JwtBuilder
+        where Str: Into<String>,
+              V: std::convert::Into<Value>
+    {
+        self.jwt.claims.insert(key.into(), value.into());
         self
     }
 
@@ -51,18 +56,28 @@ impl JwtBuilder {
         self
     }
 
-    pub fn add_audience(mut self, aud: &str) -> JwtBuilder {
-        self.jwt.audience.push(aud.to_string());
+    /// Add an allowed audience to the token. This function can be called multiple times
+    /// and the audience values will be appended instead of replace.
+    pub fn audience<Str>(mut self, aud: Str) -> JwtBuilder
+        where Str: Into<String>
+    {
+        self.jwt.audience.push(aud.into());
         self
     }
 
-    pub fn add_scope(mut self, scope: &str) -> JwtBuilder {
-        self.jwt.scopes.push(scope.to_string());
+    /// Add a scope to the list of valid JWT scopes for the token. This function is intended
+    /// to be called multiple times
+    pub fn scope<Str>(mut self, scope: Str) -> JwtBuilder
+        where Str: Into<String>
+    {
+        self.jwt.scopes.push(scope.into());
         self
     }
 
-    pub fn jwt_id(mut self, id: &str) -> JwtBuilder {
-        self.jwt.jwt_id = Some(id.to_string());
+    pub fn jwt_id<Str>(mut self, id: Str) -> JwtBuilder
+        where Str: Into<String>
+    {
+        self.jwt.jwt_id = Some(id.into());
         self
     }
 }
@@ -81,9 +96,9 @@ mod tests {
             .claim("second-claim", "value")
             .issue();
 
-        assert_eq!(Some("my-issuer".to_string()), jwt.issuer);        
-        assert_eq!(Some("my-subject".to_string()), jwt.subject);    
-        assert_eq!("value", jwt.claims["my-claim"]);   
+        assert_eq!(Some("my-issuer".to_string()), jwt.issuer);
+        assert_eq!(Some("my-subject".to_string()), jwt.subject);
+        assert_eq!("value", jwt.claims["my-claim"]);
         assert_eq!("value", jwt.claims["second-claim"]);
     }
 }

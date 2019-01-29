@@ -2,5 +2,7 @@
 members = [
     "adaptive_cards",
     "jwt",
-    "botschema",
+    "bot_schema",
+    "bot_middleware",
+    "rust-bot",
 ]

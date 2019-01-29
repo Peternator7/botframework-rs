@@ -14,8 +14,6 @@ impl Jwt {
     }
 
     /// Construct a new instance of JwtBuilder. The builder pattern can be used for constructing new tokens
-    /// ```rust
-    /// use jwt
     pub fn builder() -> JwtBuilder {
         JwtBuilder {
             jwt: Jwt::new(),

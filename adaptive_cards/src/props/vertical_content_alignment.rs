@@ -16,22 +16,22 @@ impl Default for VerticalConentAlignment {
 }
 
 impl VerticalConentAlignment {
-    pub fn is_top(align: &VerticalConentAlignment) -> bool {
-        match align {
+    pub fn is_top(&self) -> bool {
+        match self {
             VerticalConentAlignment::Top =>  true,
             _ => false,
         }
     }
 
-    pub fn is_center(align: &VerticalConentAlignment) -> bool {
-        match align {
+    pub fn is_center(&self) -> bool {
+        match self {
             VerticalConentAlignment::Center =>  true,
             _ => false,
         }
     }
 
-    pub fn is_bottom(align: &VerticalConentAlignment) -> bool {
-        match align {
+    pub fn is_bottom(&self) -> bool {
+        match self {
             VerticalConentAlignment::Bottom =>  true,
             _ => false,
         }

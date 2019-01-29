@@ -16,11 +16,24 @@ impl Default for Weight {
 }
 
 impl Weight {
-    pub fn is_default(weight: &Weight) -> bool {
-        if let Weight::Default = weight {
-            true
-        } else {
-            false
+    pub fn is_default(&self) -> bool {
+        match self {
+            Weight::Default => true,
+            _ => false,
+        }
+    }
+
+    pub fn is_lighter(&self) -> bool {
+        match self {
+            Weight::Lighter => true,
+            _ => false,
+        }
+    }
+
+    pub fn is_bolder(&self) -> bool {
+        match self {
+            Weight::Bolder => true,
+            _ => false,
         }
     }
 }

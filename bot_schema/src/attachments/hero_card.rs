@@ -36,42 +36,34 @@ impl HeroCardBuilder {
         self.inner
     }
 
-    pub fn title(mut self, title: &str) -> Self {
+    pub fn title<Str>(mut self, title: Str) -> Self
+        where Str: Into<String>
+    {
         self.inner.title = Some(title.into());
         self
     }
 
-    pub fn subtitle(mut self, subtitle: &str) -> Self {
+    pub fn subtitle<Str>(mut self, subtitle: Str) -> Self
+        where Str: Into<String>
+    {
         self.inner.subtitle = Some(subtitle.into());
         self
     }
 
-    pub fn text(mut self, text: &str) -> Self {
+    pub fn text<Str>(mut self, text: Str) -> Self
+        where Str: Into<String>
+    {
         self.inner.text = Some(text.into());
         self
     }
 
-    pub fn push_action(mut self, action: super::actions::CardAction) -> Self {
+    pub fn action(mut self, action: super::actions::CardAction) -> Self {
         self.inner.buttons.push(action);
         self
     }
 
-    pub fn push_image(mut self, image: super::actions::CardImage) -> Self {
+    pub fn image(mut self, image: super::actions::CardImage) -> Self {
         self.inner.images.push(image);
-        self
-    }
-
-    pub fn extend_actions<I>(mut self, actions: I) -> Self
-        where I: std::iter::IntoIterator<Item = super::actions::CardAction>
-    {
-        self.inner.buttons.extend(actions);
-        self
-    }
-
-    pub fn extend_images<I>(mut self, images: I) -> Self
-        where I: std::iter::IntoIterator<Item = super::actions::CardImage>
-    {
-        self.inner.images.extend(images);
         self
     }
 }
